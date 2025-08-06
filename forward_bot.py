@@ -1,13 +1,14 @@
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
-BOT_TOKEN = '8379582840:AAGACLYNbJqo4yws4Ii7L7pszkJwO9xVDrg'
-GROUP_CHAT_ID = -1002512367222  # Вставь сюда chat_id своей группы
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+GROUP_CHAT_ID = -1002512367222 # Вставь сюда свой chat_id группы
 
 async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_name = update.effective_user.first_name or "пользователь"
 
-    # Ответить отправителю
+    # Ответ отправителю
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
         text=f"Привет, {user_name}! Спасибо за сообщение. Мы скоро с тобой свяжемся 🤝"
