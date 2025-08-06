@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: telegram-bot
+    runtime: python
+    buildCommand: ""
+    startCommand: ./start.sh
+    envVars:
+      - key: BOT_TOKEN
+        value: 8379582840:AAGACLYNbJqo4yws4Ii7L7pszkJwO9xVDrg
