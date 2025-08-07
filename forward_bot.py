@@ -3,7 +3,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-GROUP_CHAT_ID = -1002512367222 # Вставь сюда свой chat_id группы
+GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID")
 
 async def forward_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_name = update.effective_user.first_name or "пользователь"
